@@ -36,17 +36,17 @@
   - `python train.py`
   
 #### 会经历一些报错：
-1.ImportError: libpython3.7m.so.1.0: cannot open shared object file: No such file or directory
+①ImportError: libpython3.7m.so.1.0: cannot open shared object file: No such file or directory
   - 解决方法：find /home /usr /opt -name "libpython3.7m.so.1.0" 2>/dev/null，找到路径，没有就下载；
   - 找到路径后：
   - nano ~/.bashrc；
   - 把搜索到的路径添加到最后一行：export LD_LIBRARY_PATH=路径:$LD_LIBRARY_PATH。
   - source ~/.bashrc
 
-2.没有安装tensorboard。
+②没有安装tensorboard。
   - 解决：conda activate himloco ; pip install tensorboard
 
-3.AttributeError: module 'distutils' has no attribute 'version'
+③AttributeError: module 'distutils' has no attribute 'version'
   - 解决方法：在anaconda里找到himloco环境的torch源文件，一般是：/anaconda3/envs/himloco/lib/python3.7/site-packages/torch
   - 在torch文件夹的子文件夹utils中找到tensorboard文件夹，打开__init__.py
   - 找到代码：
